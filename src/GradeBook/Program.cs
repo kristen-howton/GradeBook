@@ -1,4 +1,5 @@
-﻿//need namespace to not conflict with MS
+﻿using System;
+//need namespace to not conflict with MS
 namespace Gradebook
 {
 
@@ -12,7 +13,11 @@ namespace Gradebook
             book.AddGrade(90.1);
             book.AddGrade(80.4);
             book.AddGrade(70.2);
-            book.ShowStatistics();
+            var stats = book.GetStatistics();
+
+            Console.WriteLine($"This is the highest grade {stats.High}");
+            Console.WriteLine($"This is the lowest grade {stats.Low}");
+            Console.WriteLine($"The average grade is {stats.Average:N1}");
 
         }
 

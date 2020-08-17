@@ -94,3 +94,6 @@ C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\obj\Debu
 C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\obj\Debug\netcoreapp3.1\Gradebook.Tests.dll
 C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\obj\Debug\netcoreapp3.1\Gradebook.Tests.pdb
 C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\obj\Debug\netcoreapp3.1\Gradebook.Tests.genruntimeconfig.cache
+C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\bin\Debug\netcoreapp3.1\GradeBook.exe
+C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\bin\Debug\netcoreapp3.1\GradeBook.dll
+C:\Users\Jon\workspace\csharp\exercises\gradebook\Tests\Gradebook.Tests\bin\Debug\netcoreapp3.1\GradeBook.pdb

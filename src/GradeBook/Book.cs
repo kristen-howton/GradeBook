@@ -6,7 +6,7 @@ namespace Gradebook
 {
 
     //class is a blueprint
-    class Book
+    public class Book
 
     {
         //fields are private
@@ -26,23 +26,24 @@ namespace Gradebook
             grades.Add(grade);
         }
 
-        public void ShowStatistics()
+        public Statistics GetStatistics()
 
         {
 
-            double highGrade = double.MinValue;
-            double lowGrade = double.MaxValue;
-            double average = grades.Average();
+            var result = new Statistics();
+            result.Average = 0.0;
+            result.High = double.MinValue;
+            result.Low = double.MaxValue;
 
             foreach (double grade in grades)
             {
-                lowGrade = Math.Min(grade, lowGrade);
-                highGrade = Math.Max(grade, highGrade);
+                result.Low = Math.Min(grade, result.Low);
+                result.High = Math.Max(grade, result.High);
+                result.Average += grade;
 
             }
-            Console.WriteLine($"This is the highest grade {highGrade}");
-            Console.WriteLine($"This is the lowest grade {lowGrade}");
-            Console.WriteLine($"The average grade is {average:N1}");
+            result.Average /= grades.Count;
+            return result;
 
         }
     }
