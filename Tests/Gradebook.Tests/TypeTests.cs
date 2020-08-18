@@ -6,6 +6,35 @@ namespace Gradebook.Tests
 {
     public class TypeTests
     {
+
+        [Fact]
+        public void SetIntFromValue()
+        {
+            var x = GetInt();
+
+            SetInt(x);
+
+            Assert.Equal(3, x);
+        }
+
+        private int SetInt(int x)
+        {
+            return 42;
+        }
+
+        [Fact]
+        public void GetIntFromValue()
+        {
+            var x = GetInt();
+
+            Assert.Equal(3, x);
+        }
+
+        private int GetInt()
+        {
+            return 3;
+        }
+
         [Fact]
         public void PassByValue()
         {
