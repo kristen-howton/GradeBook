@@ -6,8 +6,9 @@ namespace Gradebook.Tests
 {
     public class BookTests
     {
+        //let's file know this a a test
         [Fact]
-        public void Test1()
+        public void BookCalcuatesAverageGrade()
         {
             //arrage
             var book = new Book("");

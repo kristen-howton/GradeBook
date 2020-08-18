@@ -11,7 +11,7 @@ namespace Gradebook
     {
         //fields are private
         private List<double> grades;
-        private string _name;
+        public string Name;
 
         //contructor must have same name as class
         //public Book is an access modifier
@@ -19,7 +19,7 @@ namespace Gradebook
         {
             //should ignitate default values inside of contructors
             grades = new List<double>();
-            _name = name;
+            Name = name;
         }
         public void AddGrade(double grade)
         {
