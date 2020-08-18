@@ -10,6 +10,19 @@ namespace Gradebook
 
             //used to instantiate a class, contructor method
             Book book = new Book("Gradebook");
+
+            var done = false;
+            while (!done)
+            {
+                Console.WriteLine("Enter a grade");
+                var input = Console.ReadLine();
+                if (input == "q")
+                {
+                    break;
+                }
+                var grade = double.Parse(input);
+            }
+
             book.AddGrade(90.1);
             book.AddGrade(80.4);
             book.AddGrade(70.2);
