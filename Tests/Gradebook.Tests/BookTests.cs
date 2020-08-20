@@ -1,12 +1,14 @@
 using System;
+using Gradebook;
 using Xunit;
 
 namespace Gradebook.Tests
 {
-    public class UnitTest1
+    public class BookTests
     {
+        //let's file know this a a test
         [Fact]
-        public void BookTests()
+        public void BookCalcuatesAverageGrade()
         {
             //arrage
             var book = new Book("");
@@ -17,11 +19,14 @@ namespace Gradebook.Tests
 
             //act
 
-            var result = book.ShowStatistics();
+            var result = book.GetStatistics();
 
             //assert
 
-            Assert.Equal(85.6, result.Average);
+            Assert.Equal(85.6, result.Average, 1);
+            Assert.Equal(90.5, result.High, 1);
+            Assert.Equal(77.3, result.Low, 1);
+            Assert.Equal('B', result.Letter);
         }
     }
 }
