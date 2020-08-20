@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Gradebook
 {
+    //must use keyword delegate
+    //usually take two parameters
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
     //class is a blueprint
     public class Book
@@ -39,6 +42,10 @@ namespace Gradebook
             if (grade <= 100 && grade >= 0)
             {
                 grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -122,5 +129,10 @@ namespace Gradebook
             return result;
 
         }
+
+        //field on book class  
+        public event GradeAddedDelegate GradeAdded;
+
     }
+
 }

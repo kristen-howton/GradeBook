@@ -11,6 +11,8 @@ namespace Gradebook
             //used to instantiate a class, contructor method
             Book book = new Book("Gradebook");
 
+            book.GradeAdded += OneGradeAdded;
+
             while (true)
             {
                 Console.WriteLine("Enter a grade or 'q' to quit.");
@@ -24,7 +26,6 @@ namespace Gradebook
             }
 
             var stats = book.GetStatistics();
-            book.Name = "";
 
             Console.WriteLine($"The book's name is {book.Name}");
             Console.WriteLine($"This is the highest grade {stats.High}");
@@ -32,6 +33,11 @@ namespace Gradebook
             Console.WriteLine($"The average grade is {stats.Average:N1}");
             Console.WriteLine($"The letter grade is {stats.Letter}");
 
+        }
+        //book has no idea about this method
+        static void OneGradeAdded(object sender, EventArgs e)
+        {
+            Console.WriteLine("A grade was added");
         }
 
     }
