@@ -4,6 +4,7 @@ using Xunit;
 
 namespace Gradebook.Tests
 {
+    //delegate are useful because you can point to different methods
     //new type can be used outside of this project
     //define varibables and fields
     public delegate string WriteLogDelegate(string logMesssage);
