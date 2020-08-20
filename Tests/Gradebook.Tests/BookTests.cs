@@ -4,8 +4,26 @@ using Xunit;
 
 namespace Gradebook.Tests
 {
+    //new type can be used outside of this project
+    //define varibables and fields
+    public delegate string WriteLogDelegate(string logMesssage);
     public class BookTests
     {
+        [Fact]
+        public void WriteLogDeleageCantPointToMethod()
+        {
+            WriteLogDelegate log;
+            //points to return message
+            log = new WriteLogDelegate(ReturnMessage);
+            var result = log("Hello");
+            Assert.Equal("Hello", result);
+        }
+
+        string ReturnMessage(string message)
+        {
+            return message;
+        }
+
         //let's file know this a a test
         [Fact]
         public void BookCalcuatesAverageGrade()
