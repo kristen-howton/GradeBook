@@ -9,18 +9,28 @@ namespace Gradebook.Tests
     public delegate string WriteLogDelegate(string logMesssage);
     public class BookTests
     {
+        int count = 0;
         [Fact]
         public void WriteLogDeleageCantPointToMethod()
         {
-            WriteLogDelegate log;
-            //points to return message
-            log = new WriteLogDelegate(ReturnMessage);
+            WriteLogDelegate log = ReturnMessage;
+            //points to return message and can point to more than one method
+            log += ReturnMessage;
+            log += IncrementCount;
             var result = log("Hello");
             Assert.Equal("Hello", result);
+            AssemblyLoadEventArgs.Equals(3, count);
+        }
+
+        string IncrementCount(string message)
+        {
+            count++;
+            return message;
         }
 
         string ReturnMessage(string message)
         {
+            count++;
             return message;
         }
 
