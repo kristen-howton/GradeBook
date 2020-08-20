@@ -11,7 +11,19 @@ namespace Gradebook
     {
         //fields are private
         private List<double> grades;
-        public string Name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        private string name;
 
         //contructor must have same name as class
         //public Book is an access modifier
@@ -30,7 +42,7 @@ namespace Gradebook
             }
             else
             {
-                Console.WriteLine("Invalid value");
+                throw new ArgumentException($"Invalid {nameof(grade)}");
             }
         }
         //char lets it take a single character
@@ -75,7 +87,7 @@ namespace Gradebook
             result.Low = double.MaxValue;
 
             var index = 0;
-            while (index < grades.Count);
+            while (index < grades.Count)
             {
                 result.Low = Math.Min(grades[index], result.Low);
                 result.High = Math.Max(grades[index], result.High);
