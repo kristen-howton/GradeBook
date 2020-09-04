@@ -9,7 +9,7 @@ namespace Gradebook
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
     //class is a blueprint
-    public class Book : NamedObject
+    public class Book : BookBase
 
     {
         //fields are private
@@ -37,7 +37,8 @@ namespace Gradebook
             Name = name;
         }
 
-        public void AddGrade(double grade)
+        //overrides what my base class is providing, can only override base and virtual methods
+        public override void AddGrade(double grade)
         {
             if (grade <= 100 && grade >= 0)
             {
