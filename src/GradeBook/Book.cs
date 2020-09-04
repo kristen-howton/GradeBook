@@ -9,7 +9,7 @@ namespace Gradebook
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
     //class is a blueprint
-    public class Book
+    public class Book : NamedObject
 
     {
         //fields are private
@@ -30,7 +30,7 @@ namespace Gradebook
 
         //contructor must have same name as class
         //public Book is an access modifier
-        public Book(string name)
+        public Book(string name) : base(name)
         {
             //should ignitate default values inside of contructors
             grades = new List<double>();
