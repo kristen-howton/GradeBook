@@ -9,7 +9,7 @@ namespace Gradebook
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
     //class is a blueprint
-    public class Book
+    public class Book : BookBase
 
     {
         //fields are private
@@ -30,14 +30,15 @@ namespace Gradebook
 
         //contructor must have same name as class
         //public Book is an access modifier
-        public Book(string name)
+        public Book(string name) : base(name)
         {
             //should ignitate default values inside of contructors
             grades = new List<double>();
             Name = name;
         }
 
-        public void AddGrade(double grade)
+        //overrides what my base class is providing, can only override base and virtual methods
+        public override void AddGrade(double grade)
         {
             if (grade <= 100 && grade >= 0)
             {
