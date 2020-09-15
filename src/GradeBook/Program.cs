@@ -9,7 +9,7 @@ namespace Gradebook
         {
 
             //used to instantiate a class, contructor method
-            Book book = new Book("Gradebook");
+            InMemoryBook book = new InMemoryBook("Gradebook");
 
             book.GradeAdded += OneGradeAdded;
             EnterGrade(book);
@@ -24,7 +24,7 @@ namespace Gradebook
 
         }
 
-        private static void EnterGrade(Book book)
+        private static void EnterGrade(IBook book)
         {
             while (true)
             {
